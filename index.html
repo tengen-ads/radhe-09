@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM ARMY - Official Community</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1725728339557314');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1725728339557314&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #030806;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 15px;
+            overflow-x: hidden;
+        }
+
+        /* Container Card */
+        .card-container {
+            width: 100%;
+            max-width: 420px;
+            background: linear-gradient(180deg, #0d1613 0%, #080d0b 100%);
+            border: 1.5px solid rgba(0, 255, 136, 0.25);
+            border-radius: 28px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 35px rgba(0, 255, 136, 0.08);
+            position: relative;
+            margin-top: 10px;
+        }
+
+        /* Top Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.35);
+            padding: 7px 18px;
+            border-radius: 50px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #d1fae5;
+            margin-bottom: 25px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff88;
+            animation: blink 1.5s infinite ease-in-out;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        /* Profile DP Wrapper & Glow Animation */
+        .dp-wrapper {
+            position: relative;
+            width: 155px;
+            height: 155px;
+            margin-bottom: 22px;
+        }
+
+        .dp-glow-ring {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2.5px solid #00ff88;
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.65), inset 0 0 15px rgba(0, 255, 136, 0.3);
+            animation: ringPulse 2.4s infinite ease-in-out;
+        }
+
+        @keyframes ringPulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; box-shadow: 0 0 20px rgba(0, 255, 136, 0.6); }
+            50% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 32px rgba(0, 255, 136, 0.95); }
+        }
+
+        .dp-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            background-color: #111;
+        }
+
+        /* Verified Icon */
+        .verified-badge {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 34px;
+            height: 34px;
+            background: #00e676;
+            border: 3px solid #0b1411;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            box-shadow: 0 0 12px rgba(0, 230, 118, 0.8);
+        }
+
+        .verified-badge svg {
+            width: 18px;
+            height: 18px;
+            fill: #000;
+        }
+
+        /* Typography */
+        .headline {
+            font-size: 26px;
+            font-weight: 800;
+            font-style: italic;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .sub-text {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.45;
+            text-align: center;
+            max-width: 320px;
+            margin-bottom: 28px;
+        }
+
+        /* CTA Buttons */
+        .btn-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .btn {
+            position: relative;
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 15.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+            border: none;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Shimmer Animation */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 40%;
+            height: 200%;
+            background: linear-gradient(
+                to right, 
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(255, 255, 255, 0.35) 50%, 
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(25deg);
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { left: -60%; }
+            35%, 100% { left: 140%; }
+        }
+
+        .btn-blue {
+            background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-red {
+            background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%);
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+        }
+
+        .btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer Attribution */
+        .footer-tag {
+            font-size: 12.5px;
+            color: #64748b;
+            text-align: center;
+        }
+
+        .footer-tag span {
+            color: #00ff88;
+            font-weight: 600;
+        }
+
+        /* Meta Ad Compliance Footer & Disclaimer */
+        .meta-compliance-footer {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 11px;
+            line-height: 1.5;
+            color: #6b7280;
+            text-align: center;
+        }
+
+        .meta-compliance-footer a {
+            color: #9ca3af;
+            text-decoration: underline;
+            margin: 0 6px;
+        }
+
+        .disclaimer-title {
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            color: #9ca3af;
+        }
+
+        /* Hidden Honeypot Link for Bot Trapping */
+        .bot-trap {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Container Card -->
+    <div class="card-container">
+        
+        <!-- Official Community Badge -->
+        <div class="badge">
+            <span class="dot"></span>
+            <span>Official Community</span>
+        </div>
+
+        <!-- Profile DP with Animated Glow Ring -->
+        <div class="dp-wrapper">
+            <div class="dp-glow-ring"></div>
+            <img class="dp-image" src="https://www.image2url.com/r2/default/images/1791302487301-4ea54835-3d74-4156-ab5c-0ff5b6549b88.png" alt="SYSTEM ARMY Profile">
+            <div class="verified-badge">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Headline & Subtitle -->
+        <h1 class="headline">SYSTEM ARMY</h1>
+        <p class="sub-text">Explore market updates, analysis and educational insights.</p>
+
+        <!-- CTA Buttons (Protected Redirect) -->
+        <div class="btn-group">
+            <button class="btn btn-blue" onclick="handleSecureRedirect()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.37.74-.56 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+                <span>JOIN TELEGRAM NOW</span>
+            </button>
+
+            <button class="btn btn-red" onclick="handleSecureRedirect()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.37.74-.56 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+                <span>JOIN TELEGRAM NOW</span>
+            </button>
+        </div>
+
+        <p class="footer-tag">Ads Managed by <span>@radheadsagency</span></p>
+
+        <!-- Invisible Honeypot field for Web Scraper Bots -->
+        <a href="#trap" class="bot-trap" id="honeypot" tabindex="-1" aria-hidden="true">Bot Trap</a>
+    </div>
+
+    <!-- Meta Official Policy & Compliance Footer -->
+    <footer class="meta-compliance-footer">
+        <div class="disclaimer-title">Disclaimer & Compliance Notice</div>
+        <p>
+            This website is not affiliated with, endorsed by, or a part of Meta Platforms, Inc. or Facebook Inc. 
+            FACEBOOK is a registered trademark of META Platforms, Inc. The insights and updates provided are for informational and educational purposes only.
+        </p>
+        <div style="margin-top: 10px;">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms & Conditions</a> | 
+            <a href="#">Contact Us</a>
+        </div>
+        <p style="margin-top: 8px; opacity: 0.7;">&copy; 2026 SYSTEM ARMY. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Anti-Bot Click Protection & Tracking Script -->
+    <script>
+        const TARGET_URL = "https://t.me/+3UeAwukUMXZhMjU1";
+        const pageLoadTimestamp = Date.now();
+        let isHumanInteractionDetected = false;
+
+        // Human interaction detect karne ke liye listeners
+        ['mousemove', 'touchstart', 'scroll', 'keydown'].forEach(evt => {
+            window.addEventListener(evt, () => {
+                isHumanInteractionDetected = true;
+            }, { once: true });
+        });
+
+        function handleSecureRedirect() {
+            const timeElapsed = Date.now() - pageLoadTimestamp;
+
+            // 1. Check: Headless browser ya automated bot tool check
+            if (navigator.webdriver) {
+                console.warn("Automated bot agent detected.");
+                return;
+            }
+
+            // 2. Check: Ultra-fast click check (Human 450ms se pehle click nahi kar sakta)
+            if (timeElapsed < 450) {
+                console.warn("Rapid click detected, possible bot.");
+                return;
+            }
+
+            // 3. Check: Real interaction verify karna
+            if (!isHumanInteractionDetected && !window.matchMedia('(hover: none)').matches) {
+                console.warn("No prior human movement detected.");
+                return;
+            }
+
+            // Meta Pixel Lead tracking event fire karna
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
+
+            // Safe Redirect to Telegram
+            window.location.href = TARGET_URL;
+        }
+    </script>
+</body>
+</html>
